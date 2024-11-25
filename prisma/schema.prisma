@@ -18,3 +18,14 @@ model prefectures {
   name      String  @db.VarChar(50)
   population Int?
 }
+
+model examdata {
+  id Int @id @default(autoincrement())
+  exam_year Int 
+  grade Int
+  problem_statement String @db.Text
+  choices Json
+  choices_img_path Json
+  correct Int
+  explanation String
+}

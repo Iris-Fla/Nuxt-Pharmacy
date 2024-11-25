@@ -16,4 +16,5 @@ onMounted(async () => {
     const response = await fetch('/api/prefactures');
     prefactures.value = await response.json();
 });
+
 </script>
