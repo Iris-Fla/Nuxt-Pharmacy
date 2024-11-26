@@ -2,19 +2,22 @@
     <div>
         <h1>Prefactures</h1>
         <ul>
-            <li v-for="prefecture in prefactures" :key="prefecture.id">
-                {{ prefecture.name }} : {{ prefecture.population }}
+            <li v-for="examdata in examdatas" :key="examdata.id">
+                {{ examdata.exam_year }} : {{ examdata.problem_statement }}
             </li>
         </ul>
     </div>
 </template>
 
 <script setup>
-const prefactures = ref([]);
+const examdatas = ref([]);
 
 onMounted(async () => {
-    const response = await fetch('/api/prefactures');
-    prefactures.value = await response.json();
+    const response = await fetch('/api/examdata');
+    examdatas.value = await response.json();
+    console.log(examdatas.value)
 });
+
+
 
 </script>
